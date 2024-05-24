@@ -44,12 +44,12 @@ const registerUser = asynchandler(
             return res.status(400).json({message:"User Already Exist, Please Login"})
         }
 
-        let {password,fristName,lastName,email,phone} = req.body;
+        let {password,fristName,lastName,email,phone,city,location} = req.body;
         const salt = await bcryptjs.genSalt(6);
         password = await bcryptjs.hash(req.body.password,salt);
 
         const newUser = await new userModel({
-            password,fristName,lastName,email,phone
+            password,fristName,lastName,email,phone,city,location
         })        
 
 
