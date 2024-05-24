@@ -113,7 +113,10 @@ function validateRegisterUser(obj){
             return value;
         }),
         fristName:joi.string().min(2).max(100).required().trim(),
-        lastName:joi.string().min(2).max(100).required().trim()
+        lastName:joi.string().min(2).max(100).required().trim(),
+         phone:joi.number().required().min(8).max(12),
+        city:joi.string().required(),
+        location:joi.string().required()
     });
 
     return schema.validate(obj);
