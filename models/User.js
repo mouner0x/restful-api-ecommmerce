@@ -66,7 +66,6 @@ const userSchema = new schema({
         type:Number,
         require:true,
         min:8,
-        max:12
     },
     googleAtuh:{
         id:String,
@@ -114,7 +113,7 @@ function validateRegisterUser(obj){
         }),
         fristName:joi.string().min(2).max(100).required().trim(),
         lastName:joi.string().min(2).max(100).required().trim(),
-         phone:joi.number().required().min(8).max(12),
+         phone:joi.number().required().min(8),
         city:joi.string().required(),
         location:joi.string().required()
     });
