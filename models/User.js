@@ -70,15 +70,15 @@ const userSchema = new schema({
     googleAtuh:{
         id:String,
         email:String
-    },
-    city:{
-        type:String,
-        required:true
-    },
-    location:{
-        type:String,
-        required:true
-    }
+     }
+    // city:{
+    //     type:String,
+    //     required:true
+    // },
+    // location:{
+    //     type:String,
+    //     required:true
+    // }
 
 
 },{timestamps:true})
@@ -114,8 +114,8 @@ function validateRegisterUser(obj){
         fristName:joi.string().min(2).max(100).required().trim(),
         lastName:joi.string().min(2).max(100).required().trim(),
          phone:joi.number().required().min(8),
-        city:joi.string().required(),
-        location:joi.string().required()
+        // city:joi.string().required(),
+        // location:joi.string().required()
     });
 
     return schema.validate(obj);
